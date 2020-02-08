@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --background: #2fc379;
+    --headImgSize:32px
+}
+.GrayFont{
+    color:gray ;
+    font-size: 12px;
+}

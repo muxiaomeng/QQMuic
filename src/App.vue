@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MusicNavbar></MusicNavbar>
+    <keep-alive exclude="PlayList">
+      <router-view></router-view>
+    </keep-alive>
+    <PlayMusic></PlayMusic>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MusicNavbar from "components/content/MusicNavbar";
+import PlayMusic from "components/content/PlayMusic";
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    MusicNavbar,
+    PlayMusic
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import "assets/css/base.css";
+
 </style>
