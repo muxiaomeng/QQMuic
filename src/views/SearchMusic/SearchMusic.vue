@@ -2,7 +2,7 @@
     <div>
         <NavBar class="searchNavbar">
             <template v-slot:left>
-                <img src="~assets/img/searchBar/arrow.svg" @click="goback">
+                <img src="~assets/img/searchMusic/arrow.svg" @click="goback">
             </template>
             <template v-slot:center>
                 <input v-model="value"
@@ -13,7 +13,7 @@
                 >
             </template>
             <template v-slot:right>
-                <img src="~assets/img/searchBar/voice.svg">
+                <img src="~assets/img/searchMusic/voice.svg">
             </template>
         </NavBar>
         <SearchHot @hotsearch="hotsearch"
@@ -59,7 +59,7 @@
                 }
                 searchSong(curpage,20,w).then(res=>{
                     const item = res.data.song
-                    // console.log(item)
+                    console.log(item)
                     this.w = w
                     this.value = w
                     this.curnum = item.curnum

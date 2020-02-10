@@ -1,6 +1,6 @@
 <template>
     <div>
-        一月又一月
+        轮播图就不做了QAQ  杜绝广告
     </div>
 </template>
 

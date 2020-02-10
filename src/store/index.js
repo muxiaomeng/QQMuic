@@ -14,9 +14,11 @@ const store = new Vuex.Store({
         song:{
             songname:"czk唱歌真的很好听",
             songmid:"004ENQPZ0dHaqy",
+            songid:0,
             songurl:"",
+            singer:"czk",
             album:{
-                name:"item.albumname",
+                name:"风儿甚是喧嚣",
                 mid:"001jmC6x1RMfh0"
             }
         },
@@ -42,7 +44,9 @@ const store = new Vuex.Store({
 
     },
     getters:{
-
+        getImg(state){
+            return "https://y.gtimg.cn/music/photo_new/T002R300x300M000"+state.song.album.mid+".jpg?max_age=2592000"
+        },
     },
     modules:{
 

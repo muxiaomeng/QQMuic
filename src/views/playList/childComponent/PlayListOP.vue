@@ -26,7 +26,7 @@
 
 <style scoped>
     .playListOP{
-        margin: 15px 0;
+        padding: 15px 0;
     }
     .playListOP img{
         width: 24px;

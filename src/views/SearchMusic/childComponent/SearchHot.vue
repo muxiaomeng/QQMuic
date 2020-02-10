@@ -15,7 +15,7 @@
         <Scroll class="Scroll" v-show="!isSearch">
             <div v-for="(item,index) in history" :key="index" class="historyItem" >
                 <span @click="search(item)">{{item}}</span>
-                <img  @click="deleteHistory(index)" src="~assets/img/searchBar/error.svg">
+                <img  @click="deleteHistory(index)" src="~assets/img/searchMusic/voice.svg">
             </div>
         </Scroll>
     </div>

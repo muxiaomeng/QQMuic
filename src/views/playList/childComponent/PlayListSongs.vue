@@ -11,12 +11,12 @@
                 <img src="~assets/img/playList/more2.svg" >
             </div>
         </div>
-        <div v-for="(item,index) in songlist" class="song">
+        <div class="song" v-for="(item,index) in songlist">
             <div class="songInfo" @click="playsong(item.mid,'C400'+item.mid+'.m4a',item)">
                 <div>{{item.name}}</div>
                 <div class="GrayFont">{{item.singer[0].name}}·{{item.album.name}}</div>
             </div>
-            <img src="~assets/img/playList/more3.svg" alt="" class="moreImg">
+            <img  class="moreImg" src="~assets/img/playList/more3.svg" alt="">
         </div>
     </div>
 </template>
@@ -44,7 +44,9 @@
                     const payload = {
                         songname:item.name,
                         songmid:item.mid,
+                        songid:item.id,
                         songurl,
+                        singer:item.singer[0].name,
                         album:{
                             name:item.album.name,
                             mid:item.album.pmid
@@ -94,10 +96,15 @@
         background: white;
         border-bottom: 1px solid #e4e4e4;
     }
-    .song .songInfo{
+    .songInfo{
         flex: 1;
     }
-
+    .songInfo div{
+        width: 80vw;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
     .moreImg{
         width: 16px;
         height: 16px;

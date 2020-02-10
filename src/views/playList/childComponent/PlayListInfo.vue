@@ -2,6 +2,7 @@
     <div class="playListTop">
         <!--设置背景色-->
         <div class="bgColor" :style='{background:"url("+this.cdlist.logo+")"}'></div>
+        <div class="bg_black"></div>
 
         <div class="cdInfo" >
             <div class="cdImg">
@@ -50,10 +51,17 @@
     }
     .bgColor{
         filter:blur(30px) brightness(50%);
-        height: 28vh;
+        height: 30vh;
+        width: 100%;
+        position: absolute;
+        z-index: -2;
+    }
+    .bg_black{
+        height:30vh;
         width: 100%;
         position: absolute;
         z-index: -1;
+        background-color: rgba(0,0,0,0.35);
     }
     .cdInfo{
         width: 90%;

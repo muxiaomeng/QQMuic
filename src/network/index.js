@@ -105,6 +105,22 @@ export function getHotSearch() {
         return Promise.resolve(res.data)
     })
 }
+//获取歌词
+export function getLyric(musicid) {
+    const url = '/api/getLyric'
+    const data = Object.assign({},commonParams,{
+        // songmid:"004Bpmqo4SDiYa",
+        nobase64: 1,
+        musicid
+    })
+    return axios.get(url, {
+        params: data
+    }).then((res) => {
+        res = res.data
+        res = res.slice(18,res.length-1)
+        return Promise.resolve(JSON.parse(res))
+    })
+}
 // https://c.y.qq.com/splcloud/fcgi-bin/gethotkey.fcg?&notice=0&platform=yqq.json&needNewCode=0
 /*
 export function getUserList() {

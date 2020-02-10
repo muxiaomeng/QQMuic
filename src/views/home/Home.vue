@@ -12,6 +12,8 @@
     import HomeSongList from "./childComponent/HomeSongList";
 
     import Scroll from "components/common/Scroll";
+
+    import {getLyric} from "network"
     export default {
         name: "home",
         data(){

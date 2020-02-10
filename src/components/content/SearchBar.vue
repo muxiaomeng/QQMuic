@@ -2,7 +2,7 @@
     <div class="searchBar">
         <input type="search" class="searchBar-input" @focus="focus">
         <div class="search">
-            <img src="~assets/img/searchBar/search.svg" alt="">搜索
+            <img src="~assets/img/searchMusic/search.svg" alt="">搜索
         </div>
     </div>
 </template>

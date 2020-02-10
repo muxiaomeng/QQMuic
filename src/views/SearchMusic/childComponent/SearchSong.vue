@@ -1,17 +1,22 @@
 <template>
     <Scroll class="scroll" ref="scroll" @pullingUp="pullingUp">
-        <div v-for="(item,index) in songlist" class="song">
-            <div class="songInfo" @click="playsong(item.songmid,'C400'+item.songmid+'.m4a',item)">
-                <div>{{item.songname}}</div>
-                <div class="GrayFont">{{item.singer[0].name}}·{{item.albumname}}</div>
+        <div v-for="(item,index) in songlist" >
+            <div class="song">
+                <div class="songInfo" @click="playsong(item.songmid,'C400'+item.songmid+'.m4a',item)">
+                    <div>{{item.songname}}</div>
+                    <div class="GrayFont">{{item.singer[0].name}}·{{item.albumname}}</div>
+                </div>
+                <img src="~assets/img/playList/more3.svg" alt="" class="moreImg">
             </div>
-            <img src="~assets/img/playList/more3.svg" alt="" class="moreImg">
+            <!--更多版本-->
+            <SearchOther :item="item"></SearchOther>
         </div>
     </Scroll>
 </template>
 
 <script>
     import Scroll from "components/common/Scroll";
+    import SearchOther from "./SearchOther";
     import {getSongToken} from "network"
     export default {
         name: "SearchSong",
@@ -37,11 +42,14 @@
             playsong(songmid,filename,item){
                 getSongToken(songmid,filename).then(res=>{
                     const vkey = res.data.items[0].vkey
+                    // console.log(res.data)
                     const songurl = "http://ws.stream.qqmusic.qq.com/"+filename+"?"+"fromtag=0&guid=1023110828&vkey="+vkey
                     const payload = {
                         songname:item.songname,
                         songmid:item.songmid,
+                        songid:item.songid,
                         songurl,
+                        singer:item.singer[0].name,
                         album:{
                             name:item.albumname,
                             mid:item.albummid
@@ -51,9 +59,11 @@
                     this.$store.commit("changePlay",true)
                 })
             },
+
         },
         components:{
-            Scroll
+            Scroll,
+            SearchOther
         }
     }
 </script>
@@ -74,8 +84,15 @@
     .song .songInfo{
         flex: 1;
     }
+    .songInfo>div{
+        width: 80vw;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
     .moreImg{
         width: 16px;
         height: 16px;
     }
+
 </style>
