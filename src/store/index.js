@@ -24,6 +24,9 @@ const store = new Vuex.Store({
         },
         isplay:false   //当前是否有音乐播放
     },
+    actions:{
+
+    },
     mutations:{
         changeShowNav(state){
             state.isShowNav = !state.isShowNav
@@ -39,9 +42,6 @@ const store = new Vuex.Store({
         changePlay(state,boolean){
             state.isplay = boolean
         }
-    },
-    actions:{
-
     },
     getters:{
         getImg(state){

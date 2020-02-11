@@ -67,13 +67,15 @@
             },
             playMusic(){
                 this.$refs.audio.play()
-                this.duration = this.$refs.audio.duration
             },
             pauseMusic(){
                 this.$refs.audio.pause()
             },
             //更新歌词
             updateLyric(){
+                //更新时间
+                this.duration = this.$refs.audio.duration
+                console.log(123)
                 let audio = this.$refs.audio
                 let currentTime = audio.currentTime
                 this.currentTime = audio.currentTime
@@ -140,9 +142,6 @@
         components:{
             Song
         },
-        mounted() {
-
-        }
 
     }
 </script>

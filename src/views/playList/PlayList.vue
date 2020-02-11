@@ -36,7 +36,6 @@
             getCdInfo(this.dissid).then(res=>{
                 this.cdlist = res.cdlist[0]
                 this.songlist = res.cdlist[0].songlist
-                console.log(res)
             })
         }
 

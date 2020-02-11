@@ -38,7 +38,6 @@
                 default: []
             }
         },
-
         components:{
             PlayListOP
         }

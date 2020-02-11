@@ -43,6 +43,7 @@
                 getSongToken(songmid,filename).then(res=>{
                     const vkey = res.data.items[0].vkey
                     // console.log(res.data)
+                    console.log(item)
                     const songurl = "http://ws.stream.qqmusic.qq.com/"+filename+"?"+"fromtag=0&guid=1023110828&vkey="+vkey
                     const payload = {
                         songname:item.songname,

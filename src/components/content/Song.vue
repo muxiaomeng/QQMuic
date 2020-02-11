@@ -13,7 +13,7 @@
                 <img src="~assets/img/song/more.svg" alt="">
             </template>
         </NavBar>
-        <div>
+        <div @touch>
             <div>-- {{$store.state.song.singer}} --</div>
             <img class="songImg" :class="{active:true,pause:!$store.state.isplay}" :src="$store.getters.getImg" alt="">
             <div class="songword">{{this.word}}</div>
