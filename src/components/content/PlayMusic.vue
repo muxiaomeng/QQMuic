@@ -26,7 +26,6 @@
                 :time-lyric="timeLyric"
                 :trans="trans"
                 :time-trans="timeTrans"
-
                 :word="word"
                 :current-time="currentTime"
                 :duration="duration"
@@ -75,7 +74,6 @@
             updateLyric(){
                 //更新时间
                 this.duration = this.$refs.audio.duration
-                console.log(123)
                 let audio = this.$refs.audio
                 let currentTime = audio.currentTime
                 this.currentTime = audio.currentTime
@@ -87,7 +85,7 @@
                     }
                 }
             },
-            //格式化歌词 参数 歌词数组 存放歌词 存放时间
+            //格式化歌词 参数： 歌词数组 存放歌词 存放时间
             formatLyric(lyric,sLyric,sTime){
                 let timeReg = /\[(\d*:\d*\.\d*)\]/
                 lyric = lyric.split("\n")
